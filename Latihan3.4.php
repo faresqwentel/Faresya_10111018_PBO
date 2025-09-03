@@ -1,28 +1,36 @@
 <?php
+//akses properties
+class Kendaraan
+{
+    var $jumlahRoda;
+    var $warna;
+    var $bahanBakar;
+    var $harga;
+    var $merek;
+    var $tahunPembuatan;
 
-$nilai = 88;
+    function setMerek($x) {
+        $this->merek = $x;
+    }
 
-if ($nilai > 90) {
-    $grade = "A+";
-} elseif($nilai > 80){
-    $grade = "A";
-} elseif($nilai > 70){
-    $grade = "B+";
-} elseif($nilai > 60){
-    $grade = "B";
-} elseif($nilai > 50){
-    $grade = "C+";
-} elseif($nilai > 40){
-    $grade = "C";
-} elseif($nilai > 30){
-    $grade = "D";
-} elseif($nilai > 20){
-    $grade = "E";
-} else {
-    $grade = "F";
+    function getMerek() {
+        return $this->merek;
+    }
+
+    function setHarga($y) {
+        $this->harga = $y;
+    }
+
+    function getHarga() {
+        return $this->harga;
+    }
 }
 
-echo "Nilai anda: $nilai<br>";
-echo "Grade: $grade";
+$kendaraan1 = new Kendaraan;
+$kendaraan1->setMerek('Yamaha Mio');
+$kendaraan1->setHarga(10000000);
+echo $kendaraan1->getMerek();
+echo "<br>";
+echo $kendaraan1->getHarga();
 
 ?>
